@@ -28,7 +28,15 @@ export default function SignUpPage() {
     setError("");
     setLoading(true);
 
+    console.log("[v0] Form submitted with data:", {
+      email,
+      firstName,
+      lastName,
+      phoneNumber,
+    });
+
     try {
+      console.log("[v0] Sending request to /api/auth/signup");
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -42,7 +50,9 @@ export default function SignUpPage() {
         }),
       });
 
+      console.log("[v0] Response status:", res.status);
       const data = await res.json();
+      console.log("[v0] Response data:", data);
 
       if (!res.ok) {
         setError(data.error || "Something went wrong");
@@ -50,8 +60,10 @@ export default function SignUpPage() {
         return;
       }
 
+      console.log("[v0] User created successfully, redirecting to login");
       router.push("/login");
     } catch (err) {
+      console.error("[v0] Fetch error:", err);
       setError("Failed to sign up");
       setLoading(false);
     }
@@ -61,7 +73,7 @@ export default function SignUpPage() {
     <div className="flex min-h-screen items-center justify-center p-4">
       <div className="w-full max-w-md space-y-8">
         <div className="justify-items-center text-center">
-          <Image src={logoImg} alt="logo" className="h-auto w-10 py-4" />
+          <Image src={logoImg} alt="logo" className="h-auto w-10 py-4" />{" "}
           <h1 className="text-4xl font-bold tracking-tight text-balance">
             Create your account
           </h1>
@@ -105,7 +117,7 @@ export default function SignUpPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
+                placeholder="example@mail.com"
                 required
                 className="bg-background"
               />
@@ -118,7 +130,7 @@ export default function SignUpPage() {
                 type="tel"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                placeholder="+1 (555) 000-0000"
+                placeholder="0712345678"
                 className="bg-background"
               />
             </div>
@@ -130,7 +142,7 @@ export default function SignUpPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 required
                 className="bg-background"
               />
@@ -143,7 +155,7 @@ export default function SignUpPage() {
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="Confirm your password"
                 required
                 className="bg-background"
               />
