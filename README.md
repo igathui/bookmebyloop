@@ -18,6 +18,9 @@ First, run the development server:
 pnpm dev
 ```
 
+> [! IMPORTANT]
+> NB: Node.js v19 or high is required! We recommend using the Node.js LTS version for the best developer experience
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
