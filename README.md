@@ -1,17 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BookMeByLoop Customer Portal
+
+This is the customer portal for BookMeByLoop, a business management and booking platform built with [Next.js](https://nextjs.org). Customer can login and/or sign in to an account select businesses, and book an appointment .
+
+## Features
+
+- Account registration and login
+- Secure authentication
+- Add appointments with service-based businesses
+- Dashboard for appointment
+- Built with Prisma ORM and PostgreSQL
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -19,6 +23,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Reflections
+
+The scope of this application was too ambitious for the allotted time during the Hackathon. As a result, this repository represents a working concept and prototype rather than a fully polished product. Key features and improvements remain as future work.
 
 ## Learn More
 
