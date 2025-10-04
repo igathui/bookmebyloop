@@ -23,7 +23,7 @@ export function BusinessCard({
 }: BusinessCardProps) {
   return (
     <Link
-      href={`/business/${id}`}
+      href={`/dashboard/${id}/book`}
       className="block transition-transform hover:scale-[1.02]"
     >
       <Card className="h-full transition-shadow hover:shadow-lg">
